@@ -1,0 +1,86 @@
+* {
+    font-family: 'Fraunces', serif;
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    background-color: #f89f19;
+}
+ #nombre-titulo{
+     text-align: center;
+     font-size: 40px;
+ }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculadora {
+    display: grid;
+    /* Para que se organicen las columnas en 4 y cuando se acabe se repitan*/
+    grid-template-columns: repeat(4, 75px);
+    /* Lo mismo de la anterior, pero los 160px van a ser el alto total del display */
+    grid-template-rows: 160px repeat(5, 75px);
+    background-color: #09086b;
+    padding: 15px;
+    border-radius: 32px;
+    box-shadow: 15px 10px 0px 5px #00000033;
+}
+
+button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border: none;
+    background-color: #09086b;
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f;
+}
+
+/* Para darle el efecto más oscuro cuando pulse cualquier botón */
+button:active {
+    background-color: #07064d;
+}
+
+/* Para que me quite el recuadro azul que sale cuando pulso cualquier botón */
+button:focus {
+    outline: none;
+}
+
+/* Para hacer que el símbolo de borrar todo y el 0 se expandan a 2 columnas */
+.col-2 {
+    grid-column: span 2;
+}
+
+.display {
+    /* Para que ocupe el total del largo de la calculadora */
+    grid-column: 1 / -1;
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px;
+    /* Para que se vean los números uno debajo del otro */
+    flex-direction: column;
+    /* Para alinearlo a la derecha */
+    align-items: flex-end;
+    background-color: #363636;
+    border-radius: 32px;
+    /* También para que quede a la derecha, por si acaso */
+    text-align: right;
+    /* Para que se separen los valores */
+    justify-content: space-between;
+    /* Para evitar que se desborden los números del recuadro de arriba */
+    word-break: break-all;
+    box-shadow: 0px 0px 0px 10px #00000033;
+}
+
+#valor-actual {
+    font-size: 1.5em;
+}
+
+#valor-anterior {
+    font-size: 2em;
+}
